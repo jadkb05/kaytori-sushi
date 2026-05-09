@@ -1,0 +1,20 @@
+{
+  "name": "freelance",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "vite --open /site.html",
+    "build": "vite build",
+    "preview": "vite preview --open /site.html"
+  },
+  "keywords": [
+    "restaurant",
+    "landing-page",
+    "vite"
+  ],
+  "author": "Kaytori Team",
+  "license": "UNLICENSED",
+  "description": "Landing page Kaytori Sushi",
+  "devDependencies": {
+    "vite": "^8.0.11"
+  }
+}
