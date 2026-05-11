@@ -61,7 +61,9 @@ export function SiteHeader() {
     : "border-kaytori-line/80 bg-kaytori-cream/85 backdrop-blur-xl supports-[backdrop-filter]:bg-kaytori-cream/75";
 
   const titleClass = onHero ? "text-white" : "text-kaytori-black";
-  const subClass = onHero ? "text-kaytori-goldLight/95" : "text-kaytori-muted";
+  const subClass = onHero
+    ? "text-[#f2c94c] drop-shadow-[0_1px_8px_rgba(242,201,76,0.25)]"
+    : "text-[#c79a2b]";
 
   const burgerSurface = onHero
     ? "border-white/25 bg-white/10 text-white"

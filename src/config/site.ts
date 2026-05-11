@@ -17,8 +17,8 @@ export const SITE = {
 
   instagram: "https://www.instagram.com/kaytorisushi/",
 
-  /** Logo officiel cercle + kanji (fond carré rogné en cercle via BrandLogo) */
-  logoUrl: "/kaytori-logo.jpg",
+  /** Logo officiel nettoyé et centré (fond extérieur transparent) */
+  logoUrl: "/kaytori-logo-clean.png",
 
   /** Carte officielle PDF (plein écran Kaytori — pages image) */
   menuPdfUrl: "/menu-kaytori.pdf",

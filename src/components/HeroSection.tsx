@@ -25,20 +25,11 @@ export function HeroSection() {
 
           <HeroTitleCinematic nameAccent={SITE.nameAccent} city={SITE.city} />
 
-          <div className="mx-auto mt-5 max-w-full space-y-2.5 px-1 text-center text-[0.94rem] font-light leading-relaxed text-[#e8dfd2]/95 sm:px-0 md:text-[0.97rem] lg:mx-0 lg:text-left">
+          <div className="mx-auto mt-5 max-w-full px-1 text-center text-[0.94rem] font-light leading-relaxed text-[#e8dfd2]/95 sm:px-0 md:text-[0.97rem] lg:mx-0 lg:text-left">
             <p>
               Bienvenue chez Kaytôri, un restaurant où l&apos;art culinaire rencontre la philosophie
               japonaise. Ici, nous embrassons la beauté de l&apos;imperfection et la simplicité
               élégante.
-            </p>
-            <p>
-              Nos sushis, préparés avec des ingrédients frais et de qualité, reflètent cette
-              harmonie.
-            </p>
-            <p>
-              Kaytôri vous invite à découvrir un lieu où chaque détail est pensé pour vous offrir une
-              expérience gastronomique unique qui célèbre la nature éphémère et l&apos;authenticité
-              et qui ravira vos papilles.
             </p>
           </div>
 

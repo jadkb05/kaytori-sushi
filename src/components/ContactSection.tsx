@@ -47,12 +47,6 @@ export function ContactSection() {
                   </a>
                 </li>
                 <li>
-                  <span className="font-semibold text-kaytori-black">Mobile</span> —{" "}
-                  <a href="tel:+212675565913" className="hover:text-kaytori-green hover:underline">
-                    {SITE.phoneMobileDisplay}
-                  </a>
-                </li>
-                <li>
                   <span className="font-semibold text-kaytori-black">WhatsApp</span> —{" "}
                   <a
                     href={whatsappHref()}

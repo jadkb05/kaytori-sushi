@@ -18,7 +18,7 @@ export function BrandLogo({ className = "", size = 44 }: BrandLogoProps) {
         width={size}
         height={size}
         decoding="async"
-        className="h-full w-full object-cover object-center"
+        className="block h-full w-full object-cover object-center"
         aria-hidden
       />
     </span>

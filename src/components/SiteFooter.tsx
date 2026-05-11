@@ -12,7 +12,7 @@ export function SiteFooter() {
               <BrandLogo size={52} className="shadow-[0_12px_40px_rgba(201,168,76,0.25)]" />
               <div>
                 <div className="font-display text-2xl font-semibold text-white">{SITE.name}</div>
-                <div className="mt-1 text-sm font-medium uppercase tracking-[0.18em] text-kaytori-goldLight">
+                <div className="mt-1 text-sm font-semibold uppercase tracking-[0.18em] text-[#f2c94c]">
                   Sushi • Wok • Thaï • {SITE.city}
                 </div>
               </div>
