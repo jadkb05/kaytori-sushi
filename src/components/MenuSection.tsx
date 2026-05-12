@@ -1,6 +1,7 @@
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useState } from "react";
 import { SITE } from "../config/site";
 import { Reveal } from "./Reveal";
+import { YumloInteractiveMenu } from "./YumloInteractiveMenu";
 
 const MenuPdfViewer = lazy(async () => {
   const mod = await import("./MenuPdfViewer");
@@ -17,6 +18,8 @@ function MenuPdfSkeleton() {
 }
 
 export function MenuSection() {
+  const [menuTab, setMenuTab] = useState<"online" | "pdf">("online");
+
   return (
     <section
       id="menu"
@@ -38,10 +41,33 @@ export function MenuSection() {
               La carte Kaytori
             </h2>
             <p className="mt-4 text-lg font-light leading-relaxed text-kaytori-muted">
-              Parcourez la carte avec nos contrôles intégrés (zoom), ou ouvrez le fichier en plein écran /
-              hors ligne.
+              Menu interactif (comme sur Yumlo) ou carte PDF officielle — zoom et plein écran pour le PDF.
               Tarifs et disponibilités peuvent évoluer ; la version sur place fait foi.
             </p>
+            <div className="mx-auto mt-8 flex max-w-md flex-wrap justify-center gap-2 rounded-2xl border border-kaytori-black/10 bg-white/70 p-1.5 shadow-sm backdrop-blur-sm">
+              <button
+                type="button"
+                onClick={() => setMenuTab("online")}
+                className={`flex-1 rounded-xl px-4 py-2.5 text-sm font-semibold transition-all ${
+                  menuTab === "online"
+                    ? "bg-kaytori-black text-white shadow-md"
+                    : "text-kaytori-black/70 hover:bg-white"
+                }`}
+              >
+                Menu en ligne
+              </button>
+              <button
+                type="button"
+                onClick={() => setMenuTab("pdf")}
+                className={`flex-1 rounded-xl px-4 py-2.5 text-sm font-semibold transition-all ${
+                  menuTab === "pdf"
+                    ? "bg-kaytori-black text-white shadow-md"
+                    : "text-kaytori-black/70 hover:bg-white"
+                }`}
+              >
+                Carte PDF
+              </button>
+            </div>
             <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
               <a
                 href={SITE.menuPdfUrl}
@@ -63,6 +89,13 @@ export function MenuSection() {
         </Reveal>
 
         <Reveal>
+          {menuTab === "online" ? (
+            <div className="relative mx-auto max-w-[1100px]">
+              <div className="rounded-[28px] bg-gradient-to-br from-kaytori-goldLight via-kaytori-gold to-[#8a6f28] p-[3px] shadow-[0_28px_90px_-18px_rgba(10,15,13,0.45)] ring-1 ring-kaytori-gold/30">
+                <YumloInteractiveMenu />
+              </div>
+            </div>
+          ) : (
           <div className="relative mx-auto max-w-[960px]">
             <div className="rounded-[28px] bg-gradient-to-br from-kaytori-goldLight via-kaytori-gold to-[#8a6f28] p-[3px] shadow-[0_28px_90px_-18px_rgba(10,15,13,0.5),0_0_72px_-24px_rgba(212,175,55,0.45)] ring-1 ring-kaytori-gold/30">
               <div className="overflow-hidden rounded-[25px] bg-[#0d1210] ring-1 ring-white/10">
@@ -119,6 +152,7 @@ export function MenuSection() {
               </div>
             </div>
           </div>
+          )}
         </Reveal>
       </div>
     </section>
