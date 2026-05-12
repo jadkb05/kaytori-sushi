@@ -3,7 +3,6 @@ import { SITE } from "../config/site";
 import {
   YUMLO_CATEGORIES,
   YUMLO_MENU,
-  YUMLO_MENU_URL,
   YUMLO_STORE_COVER,
   type YumloMenuItem,
 } from "../data/yumloMenu";
@@ -111,22 +110,9 @@ export function YumloInteractiveMenu() {
         </aside>
 
         <div className="bg-white px-4 py-6 sm:px-6 md:px-8 md:py-8">
-          <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
-            <h4 className="font-display text-2xl font-semibold tracking-tight text-kaytori-black md:text-3xl">
-              {category}
-            </h4>
-            <p className="text-[0.72rem] text-kaytori-muted">
-              Tarifs indicatifs (MAD) —{" "}
-              <a
-                href={YUMLO_MENU_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-semibold text-kaytori-green underline-offset-2 hover:underline"
-              >
-                Source Yumlo
-              </a>
-            </p>
-          </div>
+          <h4 className="font-display text-2xl font-semibold tracking-tight text-kaytori-black md:text-3xl">
+            {category}
+          </h4>
 
           <ul className="mt-6 grid list-none gap-4 sm:grid-cols-2 sm:gap-5">
             {items.map((it) => (
