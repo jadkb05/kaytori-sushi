@@ -68,7 +68,7 @@ export const YUMLO_MENU = [
     "description": "Saumon",
     "priceMAD": "65.00",
     "currency": "MAD",
-    "image": "https://media.yumlo.ma/products/d3f3991b-45ed-4121-84c6-7eeae42b9935.jpg"
+    "image": "/starters/saumon-wakame-avocat.png"
   },
   {
     "id": "2a41bacc9f",
@@ -77,7 +77,7 @@ export const YUMLO_MENU = [
     "description": "Crevettes",
     "priceMAD": "54.00",
     "currency": "MAD",
-    "image": "https://media.yumlo.ma/products/db159afa-5adc-4990-b7f6-26bc9ca02aaf.jpg"
+    "image": "/starters/crevettes-tempura.png"
   },
   {
     "id": "4bb9d46122",
@@ -86,7 +86,7 @@ export const YUMLO_MENU = [
     "description": "Crevettes",
     "priceMAD": "54.00",
     "currency": "MAD",
-    "image": "https://media.yumlo.ma/products/56324ae5-b2bf-4dec-830f-fd85eb30ea20.jpg"
+    "image": "/starters/crevettes-dynamite.png"
   },
   {
     "id": "3f0f832948",
@@ -95,7 +95,7 @@ export const YUMLO_MENU = [
     "description": "Saumon",
     "priceMAD": "54.00",
     "currency": "MAD",
-    "image": "https://media.yumlo.ma/products/636198c0-5573-452f-97fa-28a061e0f031.jpg"
+    "image": "/starters/saumon-sweet-sour.png"
   },
   {
     "id": "c4b4c870b0",
@@ -104,7 +104,7 @@ export const YUMLO_MENU = [
     "description": "Poulet",
     "priceMAD": "44.00",
     "currency": "MAD",
-    "image": "https://media.yumlo.ma/products/d1c6606b-4789-41da-af7d-5e632be42983.jpg"
+    "image": "/starters/poulet-sweet-sour.png"
   },
   {
     "id": "a1aee64eaf",

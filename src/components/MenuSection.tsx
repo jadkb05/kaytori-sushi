@@ -1,7 +1,7 @@
 import { lazy, Suspense, useState } from "react";
 import { SITE } from "../config/site";
 import { Reveal } from "./Reveal";
-import { YumloInteractiveMenu } from "./YumloInteractiveMenu";
+import { YakamonStartersMenu } from "./YakamonStartersMenu";
 
 const MenuPdfViewer = lazy(async () => {
   const mod = await import("./MenuPdfViewer");
@@ -23,7 +23,7 @@ export function MenuSection() {
   return (
     <section
       id="menu"
-      className="relative overflow-hidden bg-gradient-to-b from-kaytori-cream via-[#ebe6dc] to-kaytori-creamDark py-24 md:py-32"
+      className="relative scroll-mt-24 overflow-x-hidden bg-gradient-to-b from-kaytori-cream via-[#ebe6dc] to-kaytori-creamDark py-24 md:py-32"
     >
       <div className="pointer-events-none absolute inset-0 opacity-40" aria-hidden>
         <div className="absolute -left-40 top-24 h-[420px] w-[420px] rounded-full bg-kaytori-green/12 blur-[100px]" />
@@ -31,7 +31,7 @@ export function MenuSection() {
       </div>
       <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-kaytori-green/20 to-transparent" />
 
-      <div className="relative mx-auto w-[min(1180px,94vw)]">
+      <div className="relative mx-auto w-full max-w-[1180px] px-3 sm:px-4 md:px-5">
         <Reveal>
           <header className="mx-auto mb-12 max-w-2xl text-center md:mb-16">
             <span className="inline-flex items-center gap-2 rounded-full border border-kaytori-gold/35 bg-white/60 px-4 py-1.5 text-[0.68rem] font-bold uppercase tracking-[0.22em] text-kaytori-green shadow-sm backdrop-blur-sm">
@@ -41,8 +41,8 @@ export function MenuSection() {
               La carte Kaytori
             </h2>
             <p className="mt-4 text-lg font-light leading-relaxed text-kaytori-muted">
-              Menu interactif (comme sur Yumlo) ou carte PDF officielle — zoom et plein écran pour le PDF.
-              Tarifs et disponibilités peuvent évoluer ; la version sur place fait foi.
+              Aperçu menu façon <strong className="font-semibold text-kaytori-black">Yakamon</strong> — pour l’instant seule la rubrique{" "}
+              <strong className="font-semibold text-kaytori-black">Starters</strong> est en ligne. Le reste arrive bientôt ; la carte complète reste en PDF.
             </p>
             <div className="mx-auto mt-8 flex max-w-md flex-wrap justify-center gap-2 rounded-2xl border border-kaytori-black/10 bg-white/70 p-1.5 shadow-sm backdrop-blur-sm">
               <button
@@ -88,14 +88,14 @@ export function MenuSection() {
           </header>
         </Reveal>
 
-        <Reveal>
-          {menuTab === "online" ? (
-            <div className="relative mx-auto max-w-[1100px]">
-              <div className="rounded-[28px] bg-gradient-to-br from-kaytori-goldLight via-kaytori-gold to-[#8a6f28] p-[3px] shadow-[0_28px_90px_-18px_rgba(10,15,13,0.45)] ring-1 ring-kaytori-gold/30">
-                <YumloInteractiveMenu />
-              </div>
+        {menuTab === "online" ? (
+          <div className="relative mx-auto max-w-[1100px]">
+            <div className="rounded-xl shadow-md ring-1 ring-kaytori-black/[0.04] md:rounded-[28px] md:bg-gradient-to-br md:from-kaytori-goldLight md:via-kaytori-gold md:to-[#8a6f28] md:p-[3px] md:shadow-[0_28px_90px_-18px_rgba(10,15,13,0.45)] md:ring-1 md:ring-kaytori-gold/30">
+              <YakamonStartersMenu />
             </div>
-          ) : (
+          </div>
+        ) : (
+          <Reveal>
           <div className="relative mx-auto max-w-[960px]">
             <div className="rounded-[28px] bg-gradient-to-br from-kaytori-goldLight via-kaytori-gold to-[#8a6f28] p-[3px] shadow-[0_28px_90px_-18px_rgba(10,15,13,0.5),0_0_72px_-24px_rgba(212,175,55,0.45)] ring-1 ring-kaytori-gold/30">
               <div className="overflow-hidden rounded-[25px] bg-[#0d1210] ring-1 ring-white/10">
@@ -152,8 +152,8 @@ export function MenuSection() {
               </div>
             </div>
           </div>
-          )}
-        </Reveal>
+          </Reveal>
+        )}
       </div>
     </section>
   );

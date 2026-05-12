@@ -16,12 +16,17 @@ export function Reveal({ children, className = "" }: RevealProps) {
 
     const markVisible = () => setVisible(true);
 
-    const rect = el.getBoundingClientRect();
-    const vh = window.innerHeight;
-    if (rect.top < vh + 120 && rect.bottom > -80) {
-      markVisible();
-      return;
-    }
+    const checkInView = () => {
+      const rect = el.getBoundingClientRect();
+      const vh = window.innerHeight;
+      if (rect.top < vh + 200 && rect.bottom > -120) {
+        markVisible();
+        return true;
+      }
+      return false;
+    };
+
+    if (checkInView()) return;
 
     const obs = new IntersectionObserver(
       (entries) => {
@@ -33,10 +38,20 @@ export function Reveal({ children, className = "" }: RevealProps) {
           }
         }
       },
-      { threshold: 0.03, rootMargin: "0px 0px 12% 0px" }
+      { threshold: 0, rootMargin: "0px 0px 35% 0px" },
     );
     obs.observe(el);
-    return () => obs.disconnect();
+
+    const t1 = window.setTimeout(() => {
+      if (checkInView()) {
+        obs.disconnect();
+      }
+    }, 120);
+
+    return () => {
+      window.clearTimeout(t1);
+      obs.disconnect();
+    };
   }, []);
 
   return (
